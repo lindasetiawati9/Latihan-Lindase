@@ -6,7 +6,7 @@ const store = createStore({
     isLoading: false,
   },
   modules: {
-    auth
+    auth,
   },
 });
 

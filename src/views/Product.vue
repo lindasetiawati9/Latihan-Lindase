@@ -3,7 +3,7 @@
   <h1 class="mb-12 text-center font-sans text-5xl font-bold text-gray-900">Makanan Hewan<span class="text-blue-600">.</span></h1>
   <div class="mx-auto grid max-w-screen-xl grid-cols-1 gap-6 p-6 md:grid-cols-2 lg:grid-cols-3">
     <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl">
-      <a href="#">
+      <a href="/sp">
         <div class="relative flex items-end overflow-hidden rounded-xl">
           <img src="https://www.pedigree.id/sites/g/files/fnmzdf2951/files/migrate-product-files/images/nk0zwc4ubm518tbnqt9j.png" alt="Hotel Photo" />
           <div class="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
@@ -24,7 +24,7 @@
             </p>
 
             <div class="group inline-flex rounded-xl bg-blue-100 p-2 hover:bg-blue-200">
-                <a href="#" class="flex items-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                <a href="/cart" class="flex items-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
                     <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
@@ -37,7 +37,7 @@
     </article>
 
     <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl">
-      <a href="#">
+      <a href="/sp">
         <div class="relative flex items-end overflow-hidden rounded-xl">
           <img src="https://kalcare.s3-ap-southeast-1.amazonaws.com/moch4/uploads/product/31475/31475_1669883505.8116.jpg" alt="Hotel Photo" />
           <div class="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
@@ -58,7 +58,7 @@
             </p>
 
             <div class="group inline-flex rounded-xl bg-blue-100 p-2 hover:bg-blue-200">
-                <a href="#" class="flex items-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                <a href="/cart" class="flex items-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
                     <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
@@ -71,7 +71,7 @@
     </article>
 
     <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl">
-      <a href="#">
+      <a href="/sp">
         <div class="relative flex items-end overflow-hidden rounded-xl">
           <img src="https://sc04.alicdn.com/kf/H026a5e3b301a49c982b600eb7e6ec537H.jpg" alt="Hotel Photo" />
           <div class="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
@@ -92,7 +92,7 @@
             </p>
 
             <div class="group inline-flex rounded-xl bg-blue-100 p-2 hover:bg-blue-200">
-                <a href="#" class="flex items-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                <a href="/cart" class="flex items-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
                     <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
@@ -110,7 +110,7 @@
   <h1 class="mb-12 text-center font-sans text-5xl font-bold text-gray-900">Mainan Hewan<span class="text-blue-600">.</span></h1>
   <div class="mx-auto grid max-w-screen-xl grid-cols-1 gap-6 p-6 md:grid-cols-2 lg:grid-cols-3">
     <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl">
-      <a href="#">
+      <a href="/sp">
         <div class="relative flex items-end overflow-hidden rounded-xl">
           <img src="https://s3.bukalapak.com/img/3666259742/large/Gigitan_Anjing___Mainan_Anjing_Tulang_Karet_Dog_Toys_Cat_Toy.jpg" alt="Hotel Photo" />
           <div class="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
@@ -131,7 +131,7 @@
             </p>
 
             <div class="group inline-flex rounded-xl bg-blue-100 p-2 hover:bg-blue-200">
-                <a href="#" class="flex items-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                <a href="/cart" class="flex items-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
                     <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
@@ -144,7 +144,7 @@
     </article>
 
     <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl">
-      <a href="#">
+      <a href="/sp">
         <div class="relative flex items-end overflow-hidden rounded-xl">
           <img src="https://scale.coolshop-cdn.com/product-media.coolshop-cdn.com/23EC4X/4b71cc38e409421a99a7ef5a6cc80cc2.jpg/f/catit-playn-scratch-massage-blue-787-0030.jpg" alt="Hotel Photo" />
           <div class="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
@@ -165,7 +165,7 @@
             </p>
 
             <div class="group inline-flex rounded-xl bg-blue-100 p-2 hover:bg-blue-200">
-                <a href="#" class="flex items-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                <a href="/cart" class="flex items-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
                     <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
@@ -178,7 +178,7 @@
     </article>
 
     <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl">
-      <a href="#">
+      <a href="/sp">
         <div class="relative flex items-end overflow-hidden rounded-xl">
           <img src="https://img.id.my-best.com/content_section/choice_component/contents/7592631054285a02094f37f330ad177f.jpg?ixlib=rails-4.3.1&q=70&lossless=0&w=690&fit=max&s=c38752d5433422dd027e7f68bd7918d1" alt="Hotel Photo" />
           <div class="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
@@ -199,7 +199,7 @@
             </p>
 
             <div class="group inline-flex rounded-xl bg-blue-100 p-2 hover:bg-blue-200">
-                <a href="#" class="flex items-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                <a href="/cart" class="flex items-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
                     <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
@@ -217,7 +217,7 @@
   <h1 class="mb-12 text-center font-sans text-5xl font-bold text-gray-900">Pakaian Hewan<span class="text-blue-600">.</span></h1>
   <div class="mx-auto grid max-w-screen-xl grid-cols-1 gap-6 p-6 md:grid-cols-2 lg:grid-cols-3">
     <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl">
-      <a href="#">
+      <a href="/sp">
         <div class="relative flex items-end overflow-hidden rounded-xl">
           <img src="https://s3.bukalapak.com/img/3175261618/large/promo_Baju_Anjing_baju_kucing_pakaian_anjing_pet_cloth_Minio.png" alt="Hotel Photo" />
           <div class="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
@@ -238,7 +238,7 @@
             </p>
 
             <div class="group inline-flex rounded-xl bg-blue-100 p-2 hover:bg-blue-200">
-                <a href="#" class="flex items-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                <a href="/cart" class="flex items-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
                     <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
@@ -251,7 +251,7 @@
     </article>
 
     <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl">
-      <a href="#">
+      <a href="/sp">
         <div class="relative flex items-end overflow-hidden rounded-xl">
           <img src="https://down-id.img.susercontent.com/file/30447fe204e5a880ee0f0a5c0f606ec5" alt="Hotel Photo" />
           <div class="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
@@ -272,7 +272,7 @@
             </p>
 
             <div class="group inline-flex rounded-xl bg-blue-100 p-2 hover:bg-blue-200">
-                <a href="#" class="flex items-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                <a href="/cart" class="flex items-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
                     <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
@@ -285,7 +285,7 @@
     </article>
 
     <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl">
-      <a href="#">
+      <a href="/sp">
         <div class="relative flex items-end overflow-hidden rounded-xl">
           <img src="https://down-id.img.susercontent.com/file/6b868ca160fab0722f859c7ed8a22d5a" alt="Hotel Photo" />
           <div class="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
@@ -306,7 +306,7 @@
             </p>
 
             <div class="group inline-flex rounded-xl bg-blue-100 p-2 hover:bg-blue-200">
-                <a href="#" class="flex items-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                <a href="cart" class="flex items-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
                     <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>

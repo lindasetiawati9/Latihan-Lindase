@@ -57,7 +57,7 @@
 <section class="py-20">
   <div class="mx-auto grid max-w-screen-xl grid-cols-1 gap-6 p-6 md:grid-cols-2 lg:grid-cols-3">
     <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl">
-      <a href="#">
+      <a href="/sp">
         <div class="relative flex items-end overflow-hidden rounded-xl">
           <img src="https://www.pedigree.id/sites/g/files/fnmzdf2951/files/migrate-product-files/images/nk0zwc4ubm518tbnqt9j.png" alt="Hotel Photo" />
           <div class="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
@@ -83,7 +83,7 @@
     </article>
 
     <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl">
-      <a href="#">
+      <a href="/sp">
         <div class="relative flex items-end overflow-hidden rounded-xl">
           <img src="https://scale.coolshop-cdn.com/product-media.coolshop-cdn.com/23EC4X/4b71cc38e409421a99a7ef5a6cc80cc2.jpg/f/catit-playn-scratch-massage-blue-787-0030.jpg" alt="Hotel Photo" />
           <div class="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">
@@ -109,7 +109,7 @@
     </article>
 
     <article class="rounded-xl bg-white p-3 shadow-lg hover:shadow-xl">
-      <a href="#">
+      <a href="/sp">
         <div class="relative flex items-end overflow-hidden rounded-xl">
           <img src="https://down-id.img.susercontent.com/file/30447fe204e5a880ee0f0a5c0f606ec5" alt="Hotel Photo" />
           <div class="absolute bottom-3 left-3 inline-flex items-center rounded-lg bg-white p-2 shadow-md">

@@ -1,77 +1,52 @@
 import axios from "axios";
 
-const products = {
-    namespaced: true,
-    state: {
-        productData: [],
+const produk = {
+  namespaced: true,
+  state: {
+    produkData: [],
+  },
+  getters: {
+    getProduk: (state) => state.produkData,
+    //
+    getProdukBySlug: (state) => (produkSlug) => {
+        console.log("ProdukSlug:", produkSlug);
+        console.log("ProdukData:", state.produkData);
+        const produk = state.produkData.find((p) => p.slug == produkSlug);
+        console.log("Produk:", produk);
+        return produk;
+  },
+},
+  actions: {
+    async fetchProduk({ commit }) {
+      try {
+        const data = await axios.get("https://ecommerce.olipiskandar.com/api/v1/product/search");
+        commit("SET_PRODUK", data.data['products']['data']);
+      } catch (error) {
+        alert(error);
+        console.log(error);
+      }
     },
-    getters: {
-        getProducts: (state) => state.productData,
-        // get single product
-        getProductById: (state) => (productId) => {
-            console.log("ProductId:", productId);
-            console.log("ProductData:", state.productData);
-            const product = state.productData.find((p) => p.id == productId);
-            console.log("Product:", product);
-            return product;
-        },
-
-        // get filter product
-        // getProductByCategory: (state) => (productCategory) => {
-        //     const product = state.productData.filter(
-        //         (p) => p.category == productCategory
-        //     );
-        //     return product;
-        // },
+    //
+    async fetchSingleProduk({ commit }, produkSlug){
+        try{
+            const response = await axios.get(
+                `https://ecommerce.olipiskandar.com/api/v1/product/details/${produkSlug}`
+            );
+            commit("SET_SINGLE_PRODUK", response.data['products']);
+        }catch (error) {
+            alert(error);
+            console.log(error);
+        }
     },
-    actions: {
-        // async fetchProducts({ commit }) {
-        //     try {
-        //         const data = await axios.get(
-        //             "https://fakestoreapi.com/products"
-        //         );
-        //         commit("SET_PRODUCTS", data.data);
-        //     } catch (error) {
-        //         alert(error);
-        //         console.log(error);
-        //     }
-        // },
-
-        // get single product
-        async fetchSingleProduct({ commit }, productId) {
-            try {
-                const response = await axios.get(
-                    `https://fakestoreapi.com/products/${productId}`
-                );
-                commit("SET_SINGLE_PRODUCT", response.data);
-            } catch (error) {
-                alert(error);
-                console.log(error);
-            }
-        },
-        // async fetchFilterProduct({ commit }, productCategory) {
-        //     try {
-        //         const response = await axios.get(
-        //             `https://fakestoreapi.com/products/category/${productCategory}`
-        //         );
-        //         commit("SET_FILTER_PRODUCT", response.data);
-        //     } catch (error) {
-        //         alert(error);
-        //         console.log(error);
-        //     }
-        // },
+  },
+  mutations: {
+    SET_PRODUK(state, produk) {
+      state.produkData = produk;
     },
-    mutations: {
-        // SET_PRODUCTS(state, product) {
-        //     state.productData = product;
-        // },
-        SET_SINGLE_PRODUCT(state, product) {
-            state.singleProduct = product;
-        },
-        // SET_FILTER_PRODUCT(state, product) {
-        //     state.filterProduct = product;
-        // },
-    },
+    SET_SINGLE_PRODUK(state, produk) { 
+        state.singleProduk = produk;
+      },
+  },
 };
 
-export default products;
+export default produk;

@@ -132,7 +132,7 @@ export default {
                 <li v-for="cart in getCart" :key="cart.cart_id"
                   class="flex flex-col space-y-3 py-6 text-left sm:flex-row sm:space-x-5 sm:space-y-0">
                   <div class="shrink-0">
-                    <img class="h-24 w-24 max-w-full rounded-lg object-cover" src="../assets/casing hp.jpg" alt="" />
+                    <img class="h-24 w-24 max-w-full rounded-lg object-cover" src="../assets/gambar1.jpg" alt="" />
                   </div>
 
                   <div class="relative flex flex-1 flex-col justify-between">

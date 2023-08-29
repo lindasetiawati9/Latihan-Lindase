@@ -89,7 +89,7 @@
 
         <div class="relative m-10 w-full max-w-xs overflow-hidden rounded-lg bg-gray shadow-md">
           <a href="#">
-            <img class="h-50 rounded-t-lg object-cover w-full" src="../assets/casing hp.jpg" alt="product image" />
+            <img class="h-50 rounded-t-lg object-cover w-full" src="../assets/gambar1.jpg" alt="product image" />
           </a>
           <span
             class="absolute top-0 left-0 w-28 translate-y-4 -translate-x-6 -rotate-45 bg-black text-center text-sm text-white">Sale</span>

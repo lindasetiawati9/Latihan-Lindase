@@ -66,7 +66,7 @@
   
             <div class="lg:col-span-2 lg:row-span-2 lg:row-end-2">
               <h1 class="sm: text-2xl font-bold text-gray-900 sm:text-3xl"> {{ product.name }}</h1>
-              <span>{{ product.slug }}</span>
+              <span></span>
   
               <div class="mt-5 flex items-center">
                 <div class="flex items-center">
@@ -110,7 +110,7 @@
                   <input type="radio" name="type" value="Powder" class="peer sr-only" checked />
                   <p
                     class="peer-checked:bg-black peer-checked:text-white rounded-lg border border-black px-6 py-2 font-bold">
-                    {{ product.category }}</p>
+                    {{ product.slug }}</p>
                 </label>
               </div>
   
@@ -118,18 +118,37 @@
                 class="mt-10 flex flex-col items-center justify-between space-y-4 border-t border-b py-4 sm:flex-row sm:space-y-0">
                 <div class="flex items-end">
                   <h1 class="text-3xl font-bold">${{ product.base_price }}</h1>
-  
                 </div>
-  
-                <button type="button"
+
+                <div v-if="token">
+                  <!-- <router-link to="/cart"> -->
+                  <button type="button" 
                   class="inline-flex items-center justify-center rounded-md border-2 border-transparent bg-gray-900 bg-none px-12 py-3 text-center text-base font-bold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800">
                   <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 mr-3 h-5 w-5" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor" stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                   </svg>
-                  <a href="/cart">Add to cart</a>
+                  Add to cart
                 </button>
+                 <!-- </router-link> -->
+                </div>
+
+                <div v-else>
+                  <router-link to="/login">
+                    <button type="button" 
+                  class="inline-flex items-center justify-center rounded-md border-2 border-transparent bg-gray-900 bg-none px-12 py-3 text-center text-base font-bold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 mr-3 h-5 w-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                  </svg>
+                  Add to Cart
+                  <!-- <a href="/cart">Add to cart</a> -->
+                </button>
+                  </router-link>
+                </div>
               </div>
+
+              
   
               <ul class="mt-8 space-y-2">
                 <li class="flex items-center text-left text-sm font-medium text-gray-600">
@@ -187,6 +206,12 @@
   import { mapGetters, mapActions } from "vuex";
   
   export default {
+    data() {
+      return {
+        token: null,
+        counter: 1
+      }
+    },
     computed: {
       ...mapGetters("product", ["getProdukBySlug"]),
       product() {
@@ -194,16 +219,38 @@
       },
     },
     methods: {
-      ...mapActions("product", ["fetchSingleProduk"]),
-      ...mapActions("product", ["fetchProduk"])
+      ...mapActions("product", ["fetchSingleProduk", "fetchProduk"]),
+      ...mapActions("cart", ["fetchCart"]),
+
+      //add to cart
+      async addToCart(productId) {
+        try {
+          await this.$store.dispatch('product/addToCart', productId);
+          this.fetchCart();
+        } catch (error) {
+          console.log(error);
+        }
+      },
+
+      tambah() {
+        this.counter++
+      },
+      kurang() {
+        if (this.counter > 1) {
+          this.counter --
+        }
+      },
   
     },
     beforeMount() {
       this.fetchProduk()
+      this.fetchCart()
     },
     mounted() {
       const produkSlug = this.$route.params.slug;
+      const cekToken = localStorage.getItem('token');
       this.fetchSingleProduk(produkSlug)
+      this.token = cekToken
     }
   
   

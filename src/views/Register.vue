@@ -89,6 +89,12 @@
                               id="phone" v-model="phone" placeholder="Enter your phone" autofocus="" />
                       </div>
                       <div class="mb-4">
+                          <label for="name" class="mb-2 inline-block text-xs font-medium uppercase text-gray-700">Address</label>
+                          <input type="text"
+                              class="block w-full cursor-text appearance-none rounded-md border border-gray-400 bg--100 py-2 px-3 text-sm outline-none focus:border-indigo-500 focus:bg-white focus:text-gray-600 focus:shadow"
+                              id="address" v-model="address" placeholder="Enter your address" autofocus="" />
+                      </div>
+                      <div class="mb-4">
                           <div class="block">
                               <input
                                   class="mt-1 mr-2 h-5 w-5 appearance-none rounded border border-gray-300 bg-contain bg-no-repeat align-top text-black shadow checked:bg-indigo-500 focus:border-indigo-500 focus:shadow"
@@ -127,6 +133,7 @@ export default {
           password: '',
           confirm_password:'',
           phone:'',
+          address:''
 
       };
   },
@@ -138,7 +145,9 @@ export default {
               email: this.email,
               password: this.password,
               confirm_password: this.confirm_password,
-              phone: this.phone
+              phone: this.phone,
+              adress: this.address
+
           };
 
           const success = await this.login(credentials);

@@ -1,103 +1,277 @@
 <template>
-    <div class="relative mx-auto w-full bg-white">
-  <div class="grid min-h-screen grid-cols-10">
-    <div class="col-span-full py-6 px-4 sm:py-12 lg:col-span-6 lg:py-24">
-      <div class="mx-auto w-full max-w-lg">
-        <h1 class="relative text-2xl font-medium text-gray-700 sm:text-3xl">Proses Pemesanan<span class="mt-2 block h-1 w-10 bg-teal-600 sm:w-20"></span></h1>
-        <form action="" class="mt-10 flex flex-col space-y-4">
-          <div><label for="email" class="text-xs font-semibold text-gray-500">Email</label><input type="email" id="email" name="email" placeholder="nama@gmail.com" class="mt-1 block w-full rounded border-gray-300 bg-gray-50 py-3 px-4 text-sm placeholder-gray-300 shadow-sm outline-none transition focus:ring-2 focus:ring-teal-500" /></div>
-          <div class="relative"><label for="card-number" class="text-xs font-semibold text-gray-500">Phone/WhatsApp</label><input type="text" id="card-number" name="card-number" placeholder="+62-XXXX-XXX" class="block w-full rounded border-gray-300 bg-gray-50 py-3 px-4 pr-10 text-sm placeholder-gray-300 shadow-sm outline-none transition focus:ring-2 focus:ring-teal-500" /><img src="/images/uQUFIfCYVYcLK0qVJF5Yw.png" alt="" class="absolute bottom-3 right-3 max-h-4" /></div>
-          <div>
-            <p class="mt-8 text-lg font-medium">Metode Pengiriman</p>
-    <form class="mt-5 grid gap-6">
+  <div class="flex flex-col items-center border-b bg-white py-4 sm:flex-row sm:px-10 lg:px-20 xl:px-32">
+    <a href="#" class="text-2xl font-bold text-gray-800">sneekpeeks</a>
+    <div class="mt-4 py-2 text-xs sm:mt-0 sm:ml-auto sm:text-base">
       <div class="relative">
-        <input class="peer hidden" id="radio_1" type="radio" name="radio" checked />
-        <span class="peer-checked:border-gray-700 absolute right-4 top-1/2 box-content block h-3 w-3 -translate-y-1/2 rounded-full border-8 border-gray-300 bg-white"></span>
-        <label class="peer-checked:border-2 peer-checked:border-gray-700 peer-checked:bg-gray-50 flex cursor-pointer select-none rounded-lg border border-gray-300 p-4" for="radio_1">
-          <img class="w-14 object-contain" src="https://yt3.googleusercontent.com/0a24H6sgeQwUFTrC7npBeyjQza_6VgdO90KQbQH4TbDxar4SG00i8vgLHsod-cbNBDiNFDBO=s900-c-k-c0x00ffffff-no-rj" alt="" />
-          <div class="ml-5">
-            <span class="mt-2 font-semibold">JNE Express</span>
-            <p class="text-slate-500 text-sm leading-6">Delivery: 2-3 Days</p>
-          </div>
-        </label>
-      </div>
-      <div class="relative">
-        <input class="peer hidden" id="radio_2" type="radio" name="radio" checked />
-        <span class="peer-checked:border-gray-700 absolute right-4 top-1/2 box-content block h-3 w-3 -translate-y-1/2 rounded-full border-8 border-gray-300 bg-white"></span>
-        <label class="peer-checked:border-2 peer-checked:border-gray-700 peer-checked:bg-gray-50 flex cursor-pointer select-none rounded-lg border border-gray-300 p-4" for="radio_2">
-          <img class="w-14 object-contain" src="data:image/png;base64,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" alt="" />
-          <div class="ml-5">
-            <span class="mt-2 font-semibold">J&T Express</span>
-            <p class="text-slate-500 text-sm leading-6">Delivery: 2 Days</p>
-          </div>
-        </label>
-      </div>
-    </form>
-          </div>
-          <p class="mt-8 text-lg font-medium">Metode Pembayaran</p>
-          <div class="mb-4">
-            <div class="block">
-              <input class="mt-1 mr-2 h-5 w-5 appearance-none rounded border border-gray-300 bg-contain bg-no-repeat align-top text-black shadow checked:bg-indigo-500 focus:border-indigo-500 focus:shadow" type="checkbox" id="remember-me" style="background-image: url(&quot;data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 10l3 3l6-6'/%3e%3c/svg%3e&quot;)" checked />
-              <label class="inline-block" for="remember-me"> COD  </label>
-            </div>
-            <div class="block">
-              <input class="mt-1 mr-2 h-5 w-5 appearance-none rounded border border-gray-300 bg-contain bg-no-repeat align-top text-black shadow checked:bg-indigo-500 focus:border-indigo-500 focus:shadow" type="checkbox" id="remember-me" style="background-image: url(&quot;data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M6 10l3 3l6-6'/%3e%3c/svg%3e&quot;)" checked />
-              <label class="inline-block" for="remember-me"> BRI  </label>
-            </div>
-          </div>  
-          <p class="mt-8 text-lg font-medium">Kode ATM</p>
-          <div><label for="card-name" class="sr-only">Card name</label><input type="text" id="card-name" name="card-name" placeholder="Isi bila metode pembayaran Transfer" class="mt-1 block w-full rounded border-gray-300 bg-gray-50 py-3 px-4 text-sm placeholder-gray-300 shadow-sm outline-none transition focus:ring-2 focus:ring-teal-500" /></div>
-        </form>
-        <p class="mt-10 text-center text-sm font-semibold text-gray-500">By placing this order you agree to the <a href="#" class="whitespace-nowrap text-teal-400 underline hover:text-teal-600">Terms and Conditions</a></p>
-        <button type="submit" class="mt-4 inline-flex w-full items-center justify-center rounded bg-teal-600 py-2.5 px-4 text-base font-semibold tracking-wide text-white text-opacity-80 outline-none ring-offset-2 transition hover:text-opacity-100 focus:ring-2 focus:ring-teal-500 sm:text-lg">Order</button>
-      </div>
-    </div>
-    <div class="relative col-span-full flex flex-col py-6 pl-8 pr-4 sm:py-12 lg:col-span-4 lg:py-24">
-      <h2 class="sr-only">Order summary</h2>
-      <div>
-        <img src="https://images.unsplash.com/photo-1581318694548-0fb6e47fe59b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="" class="absolute inset-0 h-full w-full object-cover" />
-        <div class="absolute inset-0 h-full w-full bg-gradient-to-t from-teal-800 to-teal-400 opacity-95"></div>
-      </div>
-      <div class="relative">
-        <ul class="space-y-5">
-          <li class="flex justify-between">
-            <div class="inline-flex">
-              <img src="https://www.pedigree.id/sites/g/files/fnmzdf2951/files/migrate-product-files/images/nk0zwc4ubm518tbnqt9j.png" alt="" class="max-h-16" />
-              <div class="ml-3">
-                <p class="text-base font-semibold text-white">Pedigree</p>
-                <p class="text-sm font-medium text-white text-opacity-80">Makanan Anjing</p>
-              </div>
-            </div>
-            <p class="text-sm font-semibold text-white">Rp.70.000,-</p>
+        <ul class="relative flex w-full items-center justify-between space-x-2 sm:space-x-4">
+          <li class="flex items-center space-x-3 text-left sm:space-x-4">
+            <a class="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-200 text-xs font-semibold text-emerald-700"
+              href="#"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg></a>
+            <span class="font-semibold text-gray-900">Shop</span>
           </li>
-          <li class="flex justify-between">
-            <div class="inline-flex">
-              <img src="https://s3.bukalapak.com/img/3666259742/large/Gigitan_Anjing___Mainan_Anjing_Tulang_Karet_Dog_Toys_Cat_Toy.jpg" alt="" class="max-h-16" />
-              <div class="ml-3">
-                <p class="text-base font-semibold text-white">Tulang Gigit</p>
-                <p class="text-sm font-medium text-white text-opacity-80">Mainan Anjing</p>
-              </div>
-            </div>
-            <p class="text-sm font-semibold text-white">Rp.13.500,-</p>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+          <li class="flex items-center space-x-3 text-left sm:space-x-4">
+            <a class="flex h-6 w-6 items-center justify-center rounded-full bg-gray-600 text-xs font-semibold text-white ring ring-gray-600 ring-offset-2"
+              href="#">2</a>
+            <span class="font-semibold text-gray-900">Shipping</span>
+          </li>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24"
+            stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+          <li class="flex items-center space-x-3 text-left sm:space-x-4">
+            <a class="flex h-6 w-6 items-center justify-center rounded-full bg-gray-400 text-xs font-semibold text-white"
+              href="#">3</a>
+            <span class="font-semibold text-gray-500">Payment</span>
           </li>
         </ul>
-        <div class="my-5 h-0.5 w-full bg-white bg-opacity-30"></div>
-        <div class="space-y-2">
-          <p class="flex justify-between text-lg font-bold text-white"><span>Total price:</span><span>Rp.83.500,-</span></p>
-          <p class="flex justify-between text-sm font-medium text-white"><span>Ongkir</span><span>Rp.0,-</span></p>
-        </div>
-      </div>
-      <div class="relative mt-10 text-white">
-        <h3 class="mb-5 text-lg font-bold">Support</h3>
-        <p class="text-sm font-semibold">+01 653 235 211 <span class="font-light">(International)</span></p>
-        <p class="mt-1 text-sm font-semibold">support@nanohair.com <span class="font-light">(Email)</span></p>
-        <p class="mt-2 text-xs font-medium">Call us now for payment related issues</p>
-      </div>
-      <div class="relative mt-10 flex">
-        <p class="flex flex-col"><span class="text-sm font-bold text-white">Money Back Guarantee</span><span class="text-xs font-medium text-white">within 30 days of purchase</span></p>
       </div>
     </div>
   </div>
-</div>
+  <div class="grid sm:px-10 lg:grid-cols-2 lg:px-20 xl:px-32">
+    <div class="px-4 pt-8">
+      <p class="text-xl font-medium">Order Summary</p>
+      <p class="text-gray-400">Check your items. And select a suitable shipping method.</p>
+      <div class="mt-8 space-y-3 rounded-lg border bg-white px-2 py-4 sm:px-6">
+        <div v-for="product in getCart" :key="product.cart_id" class="flex flex-col rounded-lg bg-white sm:flex-row">
+          <img class="m-2 h-24 w-28 rounded-md border object-cover object-center"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2dU3hIRKnft40eFVAwTxnEhFRGBGzaVlUaYFKLOlF3-ZRECCi9_oRQbX6u4z37j6K3AU&usqp=CAU"
+            alt="" />
+          <div class="flex w-full flex-col px-4 py-4">
+            <span class="font-semibold">{{ product.name }}</span>
+            <span class="float-right text-gray-400">{{ product.qty }} pcs</span>
+            <p class="text-lg font-bold">Rp.{{ product.regular_price * product.qty }}</p>
+          </div>
+        </div>
+      </div>
 
+      <p class="mt-8 text-lg font-medium">Delivery Option</p>
+      <form class="mt-5 grid gap-6">
+        <div class="relative">
+          <input class="peer hidden" id="radio_1" type="radio" value="standard" v-model="deliveryType" />
+          <span
+            class="peer-checked:border-gray-700 absolute right-4 top-1/2 box-content block h-3 w-3 -translate-y-1/2 rounded-full border-8 border-gray-300 bg-white"></span>
+          <label
+            class="peer-checked:border-2 peer-checked:border-gray-700 peer-checked:bg-gray-50 flex cursor-pointer select-none rounded-lg border border-gray-300 p-4"
+            for="radio_1">
+            <img class="w-14 object-contain" src="https://componentland.com/images/naorrAeygcJzX0SyNI4Y0.png" alt="" />
+            <div class="ml-5">
+              <span class="mt-2 font-semibold">Fedex Delivery - Standard</span>
+              <p class="text-slate-500 text-sm leading-6">Delivery: 2-4 Days</p>
+            </div>
+          </label>
+        </div>
+        <div class="relative">
+          <input class="peer hidden" id="radio_2" type="radio" value="express" v-model="deliveryType" />
+          <span
+            class="peer-checked:border-gray-700 absolute right-4 top-1/2 box-content block h-3 w-3 -translate-y-1/2 rounded-full border-8 border-gray-300 bg-white"></span>
+          <label
+            class="peer-checked:border-2 peer-checked:border-gray-700 peer-checked:bg-gray-50 flex cursor-pointer select-none rounded-lg border border-gray-300 p-4"
+            for="radio_2">
+            <img class="w-14 object-contain" src="https://componentland.com/images/naorrAeygcJzX0SyNI4Y0.png" alt="" />
+            <div class="ml-5">
+              <span class="mt-2 font-semibold">Fedex Delivery - Express</span>
+              <p class="text-slate-500 text-sm leading-6">Delivery: 1-2 Days</p>
+            </div>
+          </label>
+        </div>
+      </form>
+
+      <p class="mt-8 text-lg font-medium">Shipping Methods</p>
+      <form class="mt-5 grid gap-6">
+        <div class="relative">
+          <input class="peer hidden" id="radio_3" type="radio" value="cash_on_delivery" v-model="paymentType" />
+          <span
+            class="peer-checked:border-gray-700 absolute right-4 top-1/2 box-content block h-3 w-3 -translate-y-1/2 rounded-full border-8 border-gray-300 bg-white"></span>
+          <label
+            class="peer-checked:border-2 peer-checked:border-gray-700 peer-checked:bg-gray-50 flex cursor-pointer select-none rounded-lg border border-gray-300 p-4"
+            for="radio_3">
+            <img class="w-14 object-contain"
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAABHVBMVEX///8AAAD/0YgAz2b6wQD/14wA0mj/04ng4OD4dgAApVFycnIA1WmkpKQAslgAOh0ACwWUeU/w8PDovnwYGBi+kwB0Xz4ATif2vgA5LAD/xwCDZQDSogD/2o5hYWHIyMiUlJQAhkIAkEcAXi70dABPJgDQYwAAVys4GwC4uLjV1dWIiIh4eHjwxYDt7e3dtXYyKRvNqG1VVVWQdk1ANCKmiFi4l2IgGhG8vLxKSkqsjVxXRy57ZUInJyfVr3JERESifQA1NTWQkJBjUTUAJRIAeDsAwF8dHR0eFwAxJgCPbgAWEQBvVgDirgAmHxREOCQAFgoAMhkAHQ4Am0wAbTUwFwC1VgCCPgBGNgBUQQCwiADClgBgSgB2WwAnHgCsxHZsAAALQElEQVR4nO2deVvbuBaHJwZHmWYpWYBMiklKO+3NYhyTBQohkGYKpZBkeullaG9nvv/HGNtZvMmybMuyk0e/v3iSOOjN0ZGOj6WjX35hYmJiYmJiYgpLqUa91ky3Ws1stVGIujHEVainLxNGjVr1VNSNIqjshwRUJ9nqJhjzuAbHW+hq3Y2ZaiH55ro8qa2rMRsnGHxLTCxjHn8cWS+8TZ+FTwLX2RU+30KHNeQwW0jDLytVqUEZlLX92Jj64GjMVMnxoo904ZQfu+bcGBxdKsOs/UtRV9So8h07DS+n0263O73HxWzWj41f6zDnLNSgx9eAO8tFXi4CQRUnyYMLTMyS4pkLzCr6kye0+KrQ4XMnX+R5AACnCfA8L0q9vSkepeKZZ4pnHrp8is60Wh3B/ve0z/ELOF0KJif2O11MytKJm2fXKfCloPabyQJvxVtAAsAL3PB83MbERKoZPmAW9n/3hnbzWTB5AaieiY3y6bVRfyxfTocOCPOTgeTCt6LkgeqZWHNMLmPUS1qEqVt7UzoiFp/BMwGOZ+aSW7qoETZs7Wj3OAf3Q4qfeyYKMxJCG+Cs74tvaUyBK/Y7Tp4ZBWHK0oYLGXjpnjBItctyimfGg7BgHiD2JCEo4MqYvGD3zAgITQHjbCiQwVtKpRye77UjJDTF2XmOLN9cimcWoyOsGwFl/+OLC2N0hKZhtBgWYISEBWMeVAoNMEJCY7AdWheNkrBpAOwLfAC5TDCUCFP1mllGwNN8IMnoQZgKYd17dtCL2kUUIg1CD9ldf9oRIyUsXEJbRVR5xEgVPqFbHoiEZlESnlEAjJYQnY0lpL0ICY9pACaGiME0bEIqnfRCcAYMnVBPFO4Q1p86oRTlfLgi3MkQ1qqBiTEyqqVnwy2iyjzqJkR54doSJre+6iaMNvIOgzCZzGzt45pwrQiTClpma+sm9/hJ50uMUQPpuhBqaJmbnIL2Zv+/CbOQA2nsCTWyzFbuxdG3/a9WNDwTxpZQYVOak3t8/e3lDpRsKdEtBxlPwmTm5ujNywSG+q4ZnlgSZm7e4NAp6rinsOJImDnC5FPufN3z5DEkzHzD5CvJbqNMPAkznxJYuu+IWFnW2BEmX+DgdQd9PL44Ev6RQKk9zp/LIgdZZuPAx4NevAiTjwmo2rO9Xl8uCoKW48Z9Dgd4sWf4klgQZvYTZnXHg54sFTnBPX9v55MGpu+KA2HyRo9g2vnzoShyGpn3h98ACPLY8mvlMkldURHmVp8fA08d0iKe69tXhH06MuiR0Joor4S6GyIfRrjYT3G/Uxufo4Kta/NKqIcznlZFmfiEYgcfT1E2IhsOvT81BdpqPpv7uSnY+lL/ftguen5UynFifwBjQOpDIEDPs8WN4T53vOdNFzPPdKoCrvP2PB++99VKlC6z1rVlJgXdjuA5psEKSz3oSt0XY18AuVLgBcKe49IM1q09rg4XXfDY4SnmbfA13t4j7xtyfE3DKNlofbCuIx4d1glsC/Nxf+gQe3tW1tr8gkXB6fwRekhiIHRFbVuarzxNDn2P6KpSi+JOH1+5tuTWUSDGQ3p8vjPCma3c62/v9z3p/dd1IlSTwp71Zr0IvYsRMkJGyAgZISNkhIyQERIgTIatyAlfhK79iAkpiiohIo8XniiUENCFLJwSluiW1XEo7hOmSlQBbbu1KSjY0zLvoj7WBHyW5EMf6QJeRVDerO7eLHKiOo7qyl4Fq2+Fq1EzujJ8hRQFHbu3g4mJiYmJiSlEpepZ4oqkuKqD6qNwgrR0TEolF0KsGkH7VhCuUXiA8UAMuWpE9N4Y9oZ8ykkZiEKvGhFZTe6Fwq8aQTX9C1H4VSNGERPqmbbf4Pq8fP/+P0b9b3XdHfy6u+X7txEX1tcJy1Btv1q+//uvb3X9+m513cE29Lrd5ful2BBuQ1UxEBplJIRet/GEm29DRsgIGSEjZISMcJMJ3z09vd1kwndawP3X200lfPvX8u+nzSR8MpyR8/vTBhI6iREyQkbICBmhZ8J/Np3wS3nyvMmE3ycV5aUfpuPx1p7wWme5263MXysbsctrTrg9MXTQyor74Pvy1YcK/Lr1Iaz8MHRQ+8v/OJhwjQhVe33+/Px/q6kq5S9393dfnADXiVCFKcO6YmW7vO3QRdeN0JeoEBbqH9NmtbLWcg1GwopikcnkYDKZ/xl7QoeTbS/NFV9WhPflgy8Py4nu/ueXA2jPjBOh8xG0psfOetV5azj2+WG3HMCUoROi9jMZNzwgd1vc/9z13V/DJkRvZzLsCHDdT/LTpyXDJnQ5vH653qwAP8bYoocfE++QIRO6rSGZG7Hawj4m6LtnyJAJ3daQXKl4uHQLPf/w1F1DJmyimqrK356879cTRBRDlXAF8Od7o6z1Y/1B4lmSFuFLU5GfHLzVuvZ6siRKcg9ZvvEZC5IeoWFDfBJJuDOQwbxgrnoG/LCDKqF6dz1xY4wb4XQgc6ZCx4AHww7qZPS/XaK6WBGeWvGWkJyEgNzZRSLGiFDDc6gZq0LmHbvrNQoxJoSK9Xh0PWC1LG4x73BcOMqKcSCcIqxn6a681IPWj53EmRAXb+WTRQjkT4wsxm0YgO6EfeC1WLXSXYF4bu2uDulg4+rLRDrdtKUWwid0LjeOKiCv+uS56XD7VxAjVpR4oDy5TphUslUrjYpQ6Y2cwDtjapD6FPJb2YxWKU8Ofrx6eP6csKkUvGAuAUIgDqaJ6azTH2pnHcCL5is+qSOWdbaD3euHZ9ujKYNIbsX3SQhEvTmnSowqqqENxJy8vPrYRO2Ru9evLA+k4GpFTihcWJpUGnf6kgjsJ1esPvHwcJfAF7ldUP4IjSY0aqbecgCDd4KhByqTiG3X80koQ1s112lX8U6gHdfB22yNLWIbaHwSSq4tnKreKfsGJGdEv3449d90R3XHY0PsXouWENlNvetikO8XRY4XRD1ncBUtoTINeDgcxVntcU+ZUbVcgXYQDeBX/ZrUdkTfMQ0Aw/PBhd/OetpVZhe5CATr9ML3V58hFLz5j9q0LI0oyZ09VArDprZ26pMIHAI+Q4hAqEZNgMh7zqmGbKJ0PnC49TVoNuhpzoY8z0rQHZEMYGBCjVLjFIr9vEOv1ZxtcVQX8lhqIOgmvIwRoW5OgS+q3mkehC4kAesUMi2fpV9GKjQlSLgwg2IqUTHn3tycp4Mh1jlkav6jY+rppDavkyZctZfnuOJQEnESIOqvIuWtHZwQYEiEWru1JIDr1fM8pH04JnYXHB4h3s/AAwmagTwhBRgpoXLrAbOeJnIF26IiBJr1HEMigsVcPBECPwc0QvnUicE5RvhAsuQeLqF6NwuK0lAZHgXfp/0t8fhhHnGwWolsHRd3QvUsO4Eb9jvLgKWtPsLwS4fyPU0nRFOJOITS8Lxju1Mv9TgfjPOJ4d76ZWHi4RA66NQzo4aHis+JnCxGjjCRmHph1KKWCPACEWL31XlQRtX3SBEqcmd0CMp0hWc9IoRaX0U9glKmddSJm4f10KvNBiVUxxwAtaP7xBC29ayExpOutzwQJrS+Cmx4ALFyIRGy7xmFvyrv8qSVrTYaVehCt3xRf/akjizI1Se0rDcXTp310kkz20it2nQMLVw+y6vJQVWcJCPzUhR8zyi3Mx1G2ar95y44rGg8bXdn3SkqaKFqvYVclsY6eIsTI1qHtHzPJHQheeeUHryvovDOotoSgywWiEp4ebFjBJ3ToJFzw1zu1DAZo+mcRjktdL51T1m6M0ZrvaUasMqkI7yVO8c1JF5sjgAopKpmNfB/+UId7srxsB4hFeqH5lnnshV1MdIQlGrUa610Ot2snTVi0zeZmJiYmJiYNlr/AjMF9nGxhHR4AAAAAElFTkSuQmCC"
+              alt="" />
+            <div class="ml-5 mt-4">
+              <span class="mt-2 font-semibold">Cash Or Duel</span>
+              <!-- <p class="text-slate-500 text-sm leading-6">Delivery: 2-4 Days</p> -->
+            </div>
+          </label>
+        </div>
+        <div class="relative">
+          <input class="peer hidden" id="radio_4" type="radio" value="cash_on_delivery" v-model="deliveryType" />
+          <span
+            class="peer-checked:border-gray-700 absolute right-4 top-1/2 box-content block h-3 w-3 -translate-y-1/2 rounded-full border-8 border-gray-300 bg-white"></span>
+          <label
+            class="peer-checked:border-2 peer-checked:border-gray-700 peer-checked:bg-gray-50 flex cursor-pointer select-none rounded-lg border border-gray-300 p-4"
+            for="radio_4">
+            <img class="w-14 object-contain"
+              src="https://png.pngtree.com/png-clipart/20190904/original/pngtree-orange-wallet-icon-png-image_4462385.jpg"
+              alt="" />
+            <div class="ml-5 mt-4">
+              <span class="mt-16 font-semibold leading-6">Payment Wallet</span>
+              <!-- <p class="text-slate-500 text-sm leading-6">Delivery: 2-4 Days</p> -->
+            </div>
+          </label>
+        </div>
+      </form>
+    </div>
+    <div class="mt-10 bg-gray-50 px-4 pt-8 lg:mt-0">
+      <p class="text-xl font-medium">Payment Details</p>
+      <p class="text-gray-400">Complete your order by providing your payment details.</p>
+      <div class="">
+        <label for="email" class="mt-4 mb-2 block text-sm font-medium">Email</label>
+        <div class="relative">
+          <input type="text" id="email" name="email"
+            class="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+            placeholder="your.email@gmail.com" />
+          <div class="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+            </svg>
+          </div>
+        </div>
+        <label for="card-holder" class="mt-4 mb-2 block text-sm font-medium">Card Holder</label>
+        <div class="relative">
+          <input type="text" id="card-holder" name="card-holder"
+            class="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm uppercase shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+            placeholder="Your full name here" />
+          <div class="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M15 9h3.75M15 12h3.75M15 15h3.75M4.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5zm6-10.125a1.875 1.875 0 11-3.75 0 1.875 1.875 0 013.75 0zm1.294 6.336a6.721 6.721 0 01-3.17.789 6.721 6.721 0 01-3.168-.789 3.376 3.376 0 016.338 0z" />
+            </svg>
+          </div>
+        </div>
+        <label for="card-no" class="mt-4 mb-2 block text-sm font-medium">Card Details</label>
+        <div class="flex">
+          <div class="relative w-7/12 flex-shrink-0">
+            <input type="text" id="card-no" name="card-no"
+              class="w-full rounded-md border border-gray-200 px-2 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+              placeholder="xxxx-xxxx-xxxx-xxxx" />
+            <div class="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
+              <svg class="h-4 w-4 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                fill="currentColor" viewBox="0 0 16 16">
+                <path d="M11 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1z" />
+                <path
+                  d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm13 2v5H1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm-1 9H2a1 1 0 0 1-1-1v-1h14v1a1 1 0 0 1-1 1z" />
+              </svg>
+            </div>
+          </div>
+          <input type="text" name="credit-expiry"
+            class="w-full rounded-md border border-gray-200 px-2 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+            placeholder="MM/YY" />
+          <input type="text" name="credit-cvc"
+            class="w-1/6 flex-shrink-0 rounded-md border border-gray-200 px-2 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+            placeholder="CVC" />
+        </div>
+        <label for="billing-address" class="mt-4 mb-2 block text-sm font-medium">Billing Address</label>
+        <div class="flex flex-col sm:flex-row">
+          <div class="relative flex-shrink-0 sm:w-7/12">
+            <input type="text" id="billing-address" name="billing-address"
+              class="w-full rounded-md border border-gray-200 px-4 py-3 pl-11 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+              placeholder="Street Address" />
+            <div class="pointer-events-none absolute inset-y-0 left-0 inline-flex items-center px-3">
+              <img class="h-4 w-4 object-contain" src="https://flagpack.xyz/_nuxt/4c829b6c0131de7162790d2f897a90fd.svg"
+                alt="" />
+            </div>
+          </div>
+          <select type="text" name="billing-state"
+            class="w-full rounded-md border border-gray-200 px-4 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500">
+            <option value="State">State</option>
+          </select>
+          <input type="text" name="billing-zip"
+            class="flex-shrink-0 rounded-md border border-gray-200 px-4 py-3 text-sm shadow-sm outline-none sm:w-1/6 focus:z-10 focus:border-blue-500 focus:ring-blue-500"
+            placeholder="ZIP" />
+        </div>
+
+        <!-- Total -->
+        <div class="mt-6 border-t border-b py-2">
+          <div class="flex items-center justify-between">
+            <p class="text-sm font-medium text-gray-900">Subtotal</p>
+            <p class="font-semibold text-gray-900">$399.00</p>
+          </div>
+          <div class="flex items-center justify-between">
+            <p class="text-sm font-medium text-gray-900">Shipping</p>
+            <p class="font-semibold text-gray-900">$8.00</p>
+          </div>
+        </div>
+        <div class="mt-6 flex items-center justify-between">
+          <p class="text-sm font-medium text-gray-900">Total</p>
+          <p class="text-2xl font-semibold text-gray-900">Rp.{{ totalHarga() }}</p>
+        </div>
+      </div>
+      <router-link to="/order">
+        <button @click="performCheckout"
+          class="mt-4 mb-8 w-full rounded-md bg-gray-900 px-6 py-3 font-medium text-white">Place Order</button>
+      </router-link>
+    </div>
+  </div>
 </template>
+
+<script>
+import { mapGetters, mapActions } from 'vuex';
+
+export default {
+  data() {
+    return {
+      paymentType: '',
+      deliveryType: '',
+    };
+  },
+  computed: {
+    ...mapGetters('cart', ['getCart']),
+    ...mapGetters('cart', ['getCheckout']),
+
+  },
+  methods: {
+    ...mapActions('cart', ['fetchCart']),
+    ...mapActions('product', ['fetchProduk']),
+    ...mapActions('product', ['fetchProduk']),
+    ...mapActions('auth', ['getUserAddress']),
+    // total price
+    totalHarga() {
+      this.total = this.getCart.reduce((acc, product) => {
+        return acc + parseFloat(product.regular_price * product.qty);
+      }, 0);
+
+      return this.total.toFixed(2);
+
+    },
+    async performCheckout() {
+      // Collect the product IDs to be checked out
+      const cartItemIds = this.getCart.map(product => product.cart_id);
+      // Get user address
+      const userAddressResponse = await this.$store.dispatch('auth/getUserAddress');
+      const userAddressId = userAddressResponse.data[0].id;
+
+      const checkoutPayload = {
+        shippingAddress: userAddressId,
+        billingAddress: userAddressId,
+        paymentType: this.paymentType,
+        deliveryType: this.deliveryType,
+        cart_item_ids: cartItemIds
+      };
+
+      // Call the checkout action with the collected IDs and user address
+      await this.$store.dispatch('cart/checkoutCart', checkoutPayload)
+        .then(() => {
+          this.$router.push(`/order/${this.getCheckout.order_code}`);
+        });
+    },
+  },
+  beforeMount() {
+    this.fetchProduk();
+  },
+
+  mounted() {
+    this.fetchCart();
+  }
+}
+</script>

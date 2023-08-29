@@ -5,6 +5,7 @@
                 <img src="https://cdn-icons-png.flaticon.com/512/1145/1145724.png" class="h-8 mr-3" alt="Flowbite Logo" />
                 <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">𝓟𝓮𝓽 𝓟𝓵𝓪𝓬𝓮</span>
             </router-link>
+            
             <button data-collapse-toggle="navbar-default" type="button"
                 class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                 aria-controls="navbar-default" aria-expanded="false">
@@ -14,20 +15,34 @@
                         d="M1 1h15M1 7h15M1 13h15" />
                 </svg>
             </button>
+
+            
+            
             <div v-if="isAuthenticated" class="flex md:order-2" >
-                <router-link to="/profile" class="shrink-0 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600 text-white hover:bg-blue-700">
-                    Profile
-                </router-link>
+                <CartBadgeComponent/>
+
                 <router-link to="/kontak" class="shrink-0 flex h-12 w-12 items-center justify-center rounded-lg bg-blue-600 text-white hover:bg-blue-700">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6">
                         <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
                         <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
                     </svg>
                 </router-link>
+                
                 <button @click="logout" type="button"
                     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                     Logout
                 </button>
+
+                <router-link to="/profile">
+                    <a href="">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-8 h-8 ml-3 mt-1">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+
+                    </a>
+                </router-link>
             </div>
             
             <div v-else class="flex md:order-2">
@@ -52,7 +67,7 @@
                         </router-link>
                     </li>
                     <li>
-                        <router-link to="/product"
+                        <router-link to="/produk"
                             class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">All Product</router-link>
                     </li>
                     <li>
@@ -63,10 +78,6 @@
                         <router-link to="/kategori"
                             class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Kategori</router-link>
                     </li>
-                    <li>
-                        <router-link to="/produk"
-                            class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Product</router-link>
-                    </li>
                 </ul>
             </div>
         </div>
@@ -75,6 +86,7 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
+import CartBadgeComponent from './CartBadgeComponent.vue';
 
 export default {
     computed: {
@@ -83,5 +95,6 @@ export default {
     methods: {
         ...mapActions('auth', ['logout']),
     },
+    components: { CartBadgeComponent }
 };
 </script>

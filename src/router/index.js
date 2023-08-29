@@ -5,14 +5,15 @@ import Register from "../views/Register.vue";
 //import Product from "../views/Product.vue";
 import Home from "../views/Home.vue";
 import Kontak from "../views/Kontak.vue";
-//import SingleProduct from "../views/SingleProduct.vue";
+import SingleProduct from "../views/SingleProduct.vue";
 import Cart from "../views/Cart.vue";
 import Checkout from "../views/Checkout.vue";
 import Merk from "../views/Merk.vue";
 import Kategori from "../views/Kategori.vue";
 import Produk from "../views/Produk.vue";
-import SingleProduk from "../views/SingleProduk.vue";
+// import SingleProduk from "../views/SingleProduk.vue";
 import Profile from "../views/Profile.vue";
+import PageOrder from "../views/PageOrder.vue";
 
 const routes = [
     {
@@ -36,20 +37,27 @@ const routes = [
     //     name: "Product",
     //     component: Product,
     // },
-    // {
-    //     path: "/sp",
-    //     name: "SingleProduct",
-    //     component: SingleProduct,
-    // },
+    {
+        path: "/singleproduct",
+        name: "SingleProduct",
+        component: SingleProduct,
+    },
     {
         path: "/cart",
         name: "Cart",
         component: Cart,
     },
     {
-        path: "/cekout",
-        name: "Checkout",
-        component: Checkout,
+      path: "/checkout",
+      name: "Checkout",
+      component: () => import("../views/Checkout.vue"),
+      meta: { requireLogin: true },
+      },
+    {
+        path:"/order/:orderCode",
+        name: "PageOrder",
+        component: PageOrder,
+        props: true,
     },
     {
         path: "/kontak",
@@ -71,11 +79,11 @@ const routes = [
         name: "Produk",
         component: Produk,
     },
-    {
-        path: "/singleproduk",
-        name: "SingleProduk",
-        component: SingleProduk,
-    },
+    // {
+    //     path: "/singleproduk",
+    //     name: "SingleProduk",
+    //     component: SingleProduk,
+    // },
     {
         path: "/profile",
         name: "Profile",
@@ -87,8 +95,9 @@ const routes = [
 
 const router = createRouter({
     history: createWebHistory(),
-    routes
+    routes,
 });
+
 router.beforeEach((to, from, next) => {
     if (to.meta.requiresGuest && store.getters["auth/isAuthenticated"]) {
       next("/"); // Redirect to Home
@@ -96,13 +105,24 @@ router.beforeEach((to, from, next) => {
       next();
     }
   });
-  router.beforeEach((to, from, next) => {
-      if (to.meta.requiresLogin && store.getters["auth/isAuthenticated"]) {
-        next("/login"); // Redirect to Home
-      } else {
-        next();
-      }
-    });
 
+  router.beforeEach((to, from, next) => {
+    if (to.meta.requiresLogin && store.getters["auth/isAuthenticated"]) {
+      next("/login"); // Redirect to Home
+    } else {
+      next();
+    }
+  });
+
+  function cekToken(to, from, next) {
+    var isAuthenticated = false;
+    if (localStorage.getItem("token")) isAuthenticated = true;
+    else isAuthenticated = false;
+    if (isAuthenticated) {
+      next();
+    } else {
+      next("/login");
+    }
+  }
 
 export default router;

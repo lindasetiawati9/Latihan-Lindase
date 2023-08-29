@@ -5,6 +5,7 @@
     <h1 class="my-1 text-center text-xl font-bold leading-8 text-gray-900">Selamat Datang!!</h1>
     <h3 class="font-lg text-semibold text-center leading-6 text-gray-600">{{ user.name }}</h3>
     <h3 class="font-lg text-semibold text-center leading-6 text-gray-600">{{ user.email }}</h3>
+    <h3 class="font-lg text-semibold text-center leading-6 text-gray-600">{{ user.address }}</h3>
   </div>
 </div>
 </center>
